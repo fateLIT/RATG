@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /tarifrechner.html
+
+Sitemap: https://www.tschann-consulting.com/sitemap.xml
