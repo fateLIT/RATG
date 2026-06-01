@@ -3,72 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rechtsanwaltsgebühren Rechner FL</title>
+    <title>RATG Gebührenrechner · Liechtenstein</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6B7280'
+                        navy: '#0F172A',
+                        'navy-mid': '#1E293B',
+                        'navy-light': '#334155',
+                        gold: '#CA8A04',
+                        'gold-light': '#EAB308',
+                        'gold-pale': '#FEF9C3',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        .input-field {
-            font-size: 16px !important;
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Poppins', sans-serif; }
+
+        .glass {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .input-field { font-size: 16px !important; }
+        .input-styled {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #F8FAFC;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-styled:focus {
+            outline: none;
+            border-color: #CA8A04;
+            box-shadow: 0 0 0 3px rgba(202,138,4,0.2);
+        }
+        .input-styled option { background: #1E293B; color: #F8FAFC; }
+        .checkbox-gold:checked { accent-color: #CA8A04; }
+        .btn-gold {
+            background: linear-gradient(135deg, #CA8A04 0%, #EAB308 100%);
+            color: #0F172A;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+            box-shadow: 0 4px 20px rgba(202,138,4,0.35);
+        }
+        .btn-gold:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(202,138,4,0.45); }
+        .btn-gold:active { transform: translateY(0) scale(0.98); }
+        .result-card {
+            background: rgba(202,138,4,0.06);
+            border: 1px solid rgba(202,138,4,0.2);
+        }
+        .total-amount { color: #EAB308; font-family: 'Poppins', sans-serif; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.7rem;
+            font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.04em;
+            background: rgba(202,138,4,0.15); border: 1px solid rgba(202,138,4,0.3); color: #FDE68A;
+        }
+        .divider { border-color: rgba(255,255,255,0.08); }
+        .label-text { color: #94A3B8; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+        .row-item { color: #CBD5E1; }
+        .row-value { color: #F1F5F9; font-weight: 600; }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
         }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
-    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 min-h-screen">
-        <div class="bg-primary text-white p-6 rounded-b-3xl shadow-lg">
-            <h1 class="text-2xl font-bold text-center">Rechtsanwalts-<br>gebühren Rechner</h1>
-            <p class="text-primary-100 text-center text-sm mt-2">LGBl. 1992 Nr. 69 - Liechtenstein</p>
-        </div>
+<body class="min-h-screen" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);">
 
-        <div class="p-6 space-y-6">
+    <!-- Background decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div style="position:absolute;top:-15%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(202,138,4,0.08) 0%,transparent 70%);border-radius:50%;"></div>
+        <div style="position:absolute;bottom:-10%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,0.06) 0%,transparent 70%);border-radius:50%;"></div>
+    </div>
+
+    <div class="relative min-h-screen flex flex-col items-center justify-start py-10 px-4">
+
+        <!-- Header -->
+        <header class="w-full max-w-lg mb-8">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <div style="width:40px;height:40px;background:linear-gradient(135deg,#CA8A04,#EAB308);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(202,138,4,0.4);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-heading font-700 text-base leading-tight" style="font-family:'Poppins',sans-serif;font-weight:700;">RATG</div>
+                        <div class="text-xs" style="color:#64748B;">Liechtenstein</div>
+                    </div>
+                </div>
+                <span class="badge">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    LGBl. 1992 Nr. 69
+                </span>
+            </div>
+
+            <h1 class="text-white mb-2" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.65rem;line-height:1.2;">
+                Rechtsanwalts&shy;gebühren<br>
+                <span style="color:#EAB308;">Rechner</span>
+            </h1>
+            <p style="color:#64748B;font-size:0.85rem;">
+                Gebührenberechnung nach der Verordnung vom 30. Juni 1992
+            </p>
+        </header>
+
+        <!-- Calculator Card -->
+        <main class="w-full max-w-lg glass-card rounded-2xl p-6 space-y-5 shadow-2xl">
+
+            <!-- Bemessungsgrundlage -->
             <div class="space-y-2">
-                <label for="streitwert" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-                    Bemessungsgrundlage (CHF)
-                </label>
+                <label for="streitwert" class="label-text block">Bemessungsgrundlage</label>
                 <div class="relative">
-                    <input type="number" 
-                           id="streitwert" 
+                    <input type="number"
+                           id="streitwert"
                            placeholder="z.B. 50000"
-                           class="input-field w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                           class="input-field input-styled w-full px-4 py-3 rounded-xl pr-14"
                            oninput="calculateFees()">
-                    <span class="absolute right-4 top-3 text-gray-500 dark:text-gray-400">CHF</span>
+                    <span style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:#475569;font-size:0.85rem;font-weight:600;">CHF</span>
                 </div>
             </div>
 
+            <!-- Tarifpost -->
             <div class="space-y-2">
-                <label for="tarifpost" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-                    Tarifpost
-                </label>
-                <select id="tarifpost" 
-                        class="input-field w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                <label for="tarifpost" class="label-text block">Tarifpost</label>
+                <select id="tarifpost"
+                        class="input-field input-styled w-full px-4 py-3 rounded-xl cursor-pointer"
                         onchange="handleTarifpostChange()">
                     <option value="">Tarifpost wählen</option>
-                    <optgroup label="Tarifpost 1 - Einfache Schriftsätze">
+                    <optgroup label="Tarifpost 1 – Einfache Schriftsätze">
                         <option value="tp1">TP1: Anzeigen, Mitteilungen, Ansuchen</option>
                     </optgroup>
-                    <optgroup label="Tarifpost 2 - Mittlere Schriftsätze">
+                    <optgroup label="Tarifpost 2 – Mittlere Schriftsätze">
                         <option value="tp2-schrift">TP2: Mahnklagen, Saldoklagen, etc.</option>
                         <option value="tp2-tag">TP2: Erste Tagsatzungen</option>
                     </optgroup>
-                    <optgroup label="Tarifpost 3 - Komplexe Schriftsätze">
+                    <optgroup label="Tarifpost 3 – Komplexe Schriftsätze">
                         <option value="tp3a">TP3A: Klagen, vorbereitende Schriftsätze, Tagsatzungen</option>
                         <option value="tp3b">TP3B: Berufungen, Rekurse</option>
                         <option value="tp3c">TP3C: Revisionen</option>
                     </optgroup>
-                    <optgroup label="Tarifpost 4 - Strafverfahren">
+                    <optgroup label="Tarifpost 4 – Strafverfahren">
                         <option value="tp4-uebertretung">TP4: Privatanklage Übertretung</option>
                         <option value="tp4-vergehen">TP4: Privatanklage Vergehen</option>
                     </optgroup>
-                    <optgroup label="Tarifpost 5-9 - Sonstige Leistungen">
+                    <optgroup label="Tarifpost 5–9 – Sonstige Leistungen">
                         <option value="tp5">TP5: Einfache Schreiben</option>
                         <option value="tp6">TP6: Briefe anderer Art</option>
                         <option value="tp8">TP8: Besprechungen</option>
@@ -76,12 +177,11 @@
                 </select>
             </div>
 
+            <!-- Zeitdauer (conditional) -->
             <div id="zeitContainer" class="space-y-2 hidden">
-                <label for="zeitdauer" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-                    Zeitdauer
-                </label>
-                <select id="zeitdauer" 
-                        class="input-field w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                <label for="zeitdauer" class="label-text block">Zeitdauer</label>
+                <select id="zeitdauer"
+                        class="input-field input-styled w-full px-4 py-3 rounded-xl cursor-pointer"
                         onchange="calculateFees()">
                     <option value="0.5">30 Minuten</option>
                     <option value="1">1 Stunde</option>
@@ -106,189 +206,175 @@
                 </select>
             </div>
 
-            <div id="informationContainer" class="space-y-2 hidden">
-                <label class="flex items-center space-x-3">
-                    <input type="checkbox" 
-                           id="informationszuschlag" 
-                           class="w-5 h-5 text-primary bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary focus:ring-2"
-                           onchange="calculateFees()">
-                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        Informationszuschlag (+50%)
-                    </span>
-                </label>
-                <p class="text-xs text-gray-500 dark:text-gray-400 ml-8">
-                    Für Information aus den Akten oder mit der Partei
-                </p>
-            </div>
+            <!-- Optionen Section -->
+            <div class="space-y-3">
+                <div class="label-text">Optionen</div>
 
-            <div class="space-y-2">
-                <label class="flex items-center space-x-3">
-                    <input type="checkbox" 
-                           id="streitgenossenCheckbox" 
-                           class="w-5 h-5 text-primary bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary focus:ring-2"
-                           onchange="toggleStreitgenossenSelect()">
-                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        Streitgenossenzuschlag?
-                    </span>
-                </label>
-                
-                <div id="streitgenossenContainer" class="hidden ml-8">
-                    <label for="streitgenossen" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                        Anzahl der Personen:
+                <!-- Informationszuschlag (conditional) -->
+                <div id="informationContainer" class="hidden">
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox"
+                               id="informationszuschlag"
+                               class="checkbox-gold mt-0.5 w-4 h-4 cursor-pointer rounded"
+                               onchange="calculateFees()">
+                        <div>
+                            <span class="text-sm font-semibold" style="color:#E2E8F0;">Informationszuschlag (+50%)</span>
+                            <p class="text-xs mt-0.5" style="color:#475569;">Für Information aus den Akten oder mit der Partei</p>
+                        </div>
                     </label>
-                    <select id="streitgenossen" 
-                            class="input-field w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                            onchange="calculateFees()">
-                        <option value="2">2 Personen (+10%)</option>
-                        <option value="3">3 Personen (+15%)</option>
-                        <option value="4">4 Personen (+20%)</option>
-                        <option value="5">5 Personen (+25%)</option>
-                        <option value="6">6 Personen (+30%)</option>
-                        <option value="7">7 Personen (+35%)</option>
-                        <option value="8">8 Personen (+40%)</option>
-                        <option value="9">9 Personen (+45%)</option>
-                        <option value="10">10+ Personen (+50% max.)</option>
-                    </select>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                        Mehrere vertretene oder gegenüberstehende Personen
-                    </p>
                 </div>
-            </div>
 
-            <div id="einheitssatzContainer" class="space-y-2 hidden">
-                <label class="flex items-center space-x-3">
-                    <input type="checkbox" 
-                           id="einheitssatz" 
-                           class="w-5 h-5 text-primary bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary focus:ring-2"
+                <!-- Streitgenossen -->
+                <div>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox"
+                               id="streitgenossenCheckbox"
+                               class="checkbox-gold w-4 h-4 cursor-pointer rounded"
+                               onchange="toggleStreitgenossenSelect()">
+                        <span class="text-sm font-semibold" style="color:#E2E8F0;">Streitgenossenzuschlag</span>
+                    </label>
+                    <div id="streitgenossenContainer" class="hidden ml-7 mt-2 space-y-1">
+                        <label for="streitgenossen" class="block text-xs" style="color:#64748B;">Anzahl der Personen</label>
+                        <select id="streitgenossen"
+                                class="input-field input-styled w-full px-4 py-2.5 rounded-xl text-sm cursor-pointer"
+                                onchange="calculateFees()">
+                            <option value="2">2 Personen (+10%)</option>
+                            <option value="3">3 Personen (+15%)</option>
+                            <option value="4">4 Personen (+20%)</option>
+                            <option value="5">5 Personen (+25%)</option>
+                            <option value="6">6 Personen (+30%)</option>
+                            <option value="7">7 Personen (+35%)</option>
+                            <option value="8">8 Personen (+40%)</option>
+                            <option value="9">9 Personen (+45%)</option>
+                            <option value="10">10+ Personen (+50% max.)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Einheitssatz (conditional) -->
+                <div id="einheitssatzContainer" class="hidden">
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox"
+                               id="einheitssatz"
+                               class="checkbox-gold mt-0.5 w-4 h-4 cursor-pointer rounded"
+                               onchange="calculateFees()"
+                               checked>
+                        <div>
+                            <span class="text-sm font-semibold" style="color:#E2E8F0;">Einheitssatz für Nebenleistungen</span>
+                            <p class="text-xs mt-0.5" style="color:#475569;">50% (≤ CHF 15'000) / 40% (> CHF 15'000) statt TP5, 6, 8</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Besondere Bewertung -->
+                <div>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox"
+                               id="sonderBewertung"
+                               class="checkbox-gold w-4 h-4 cursor-pointer rounded"
+                               onchange="toggleSonderBewertung()">
+                        <span class="text-sm font-semibold" style="color:#E2E8F0;">Besondere Bewertung (Art. 11 RATG)</span>
+                    </label>
+                    <div id="sonderBewertungSelect" class="hidden ml-7 mt-2">
+                        <select id="bewertungsart"
+                                class="input-field input-styled w-full px-4 py-2.5 rounded-xl text-sm cursor-pointer"
+                                onchange="updateSonderbewertung()">
+                            <option value="3000">Besitzesschutzklagen (CHF 3'000)</option>
+                            <option value="1500">Wohnungsbestand (CHF 1'500)</option>
+                            <option value="3000_2">Geschäftslokalbestand (CHF 3'000)</option>
+                            <option value="3000_3">Dingliche Rechte (CHF 3'000)</option>
+                            <option value="3000_4">Ehe-/Familienrecht (CHF 3'000)</option>
+                            <option value="1500_2">Vaterschaftsstreit (CHF 1'500)</option>
+                            <option value="1000">Privatanklage Übertretung (CHF 1'000)</option>
+                            <option value="5000">Privatanklage Vergehen (CHF 5'000)</option>
+                            <option value="20000">Privatbeteiligter Verbrechen (CHF 20'000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- MWST -->
+                <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox"
+                           id="mwstOption"
+                           class="checkbox-gold w-4 h-4 cursor-pointer rounded"
                            onchange="calculateFees()"
                            checked>
-                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        Einheitssatz für Nebenleistungen
-                    </span>
-                </label>
-                <p class="text-xs text-gray-500 dark:text-gray-400 ml-8">
-                    50% ( CHF 15'000) / 40% (> CHF 15'000) statt TP5, 6, 8
-                </p>
-            </div>
-
-            <div class="space-y-2">
-                <label class="flex items-center space-x-3">
-                    <input type="checkbox" 
-                           id="sonderBewertung" 
-                           class="w-5 h-5 text-primary bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary focus:ring-2"
-                           onchange="toggleSonderBewertung()">
-                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        Besondere Bewertung (Art. 11 RATG)
-                    </span>
-                </label>
-                
-                <div id="sonderBewertungSelect" class="hidden ml-8">
-                    <select id="bewertungsart" 
-                            class="input-field w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                            onchange="updateSonderbewertung()">
-                        <option value="3000">Besitzesschutzklagen (CHF 3'000)</option>
-                        <option value="1500">Wohnungsbestand (CHF 1'500)</option>
-                        <option value="3000_2">Geschäftslokalbestand (CHF 3'000)</option>
-                        <option value="3000_3">Dingliche Rechte (CHF 3'000)</option>
-                        <option value="3000_4">Ehe-/Familienrecht (CHF 3'000)</option>
-                        <option value="1500_2">Vaterschaftsstreit (CHF 1'500)</option>
-                        <option value="1000">Privatanklage Übertretung (CHF 1'000)</option>
-                        <option value="5000">Privatanklage Vergehen (CHF 5'000)</option>
-                        <option value="20000">Privatbeteiligter Verbrechen (CHF 20'000)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="space-y-2">
-                <label class="flex items-center space-x-3">
-                    <input type="checkbox" 
-                           id="mwstOption" 
-                           class="w-5 h-5 text-primary bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary focus:ring-2"
-                           onchange="calculateFees()"
-                           checked>
-                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        MWST (8,1%)
-                    </span>
+                    <span class="text-sm font-semibold" style="color:#E2E8F0;">MWST (8,1%)</span>
                 </label>
             </div>
 
-            <button onclick="calculateFees()" 
-                    class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-6 rounded-xl transition-all transform active:scale-95 shadow-lg">
-                Gebühren berechnen
+            <!-- Calculate Button -->
+            <button onclick="calculateFees()"
+                    class="btn-gold w-full py-3.5 px-6 rounded-xl text-sm cursor-pointer">
+                <span style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/>
+                    </svg>
+                    Gebühren berechnen
+                </span>
             </button>
 
+            <!-- Result -->
             <div id="result" class="hidden">
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
-                        <span id="tarifpostName">Gebührenberechnung</span>
-                    </h3>
-                    
-                    <div class="space-y-3">
+                <div class="result-card rounded-xl p-5 space-y-3">
+                    <h3 class="font-semibold text-sm pb-2 border-b divider" style="font-family:'Poppins',sans-serif;color:#E2E8F0;" id="tarifpostName">Gebührenberechnung</h3>
+
+                    <div class="space-y-2.5">
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-600 dark:text-gray-400">Grundgebühr:</span>
-                            <span id="grundgebuhr" class="font-semibold">-</span>
+                            <span class="row-item text-sm">Grundgebühr</span>
+                            <span id="grundgebuhr" class="row-value text-sm">—</span>
                         </div>
-                        
                         <div id="zusatzgebuhrRow" class="flex justify-between items-center hidden">
-                            <span class="text-gray-600 dark:text-gray-400" id="zusatzgebuhrLabel">Zusatzgebühr:</span>
-                            <span id="zusatzgebuhr" class="font-semibold">-</span>
+                            <span class="row-item text-sm" id="zusatzgebuhrLabel">Zusatzgebühr</span>
+                            <span id="zusatzgebuhr" class="row-value text-sm">—</span>
                         </div>
-                        
                         <div id="streitgenossenRow" class="flex justify-between items-center hidden">
-                            <span class="text-gray-600 dark:text-gray-400" id="streitgenossenLabel">Streitgenossenzuschlag:</span>
-                            <span id="streitgenossengebuhr" class="font-semibold">-</span>
+                            <span class="row-item text-sm" id="streitgenossenLabel">Streitgenossenzuschlag</span>
+                            <span id="streitgenossengebuhr" class="row-value text-sm">—</span>
                         </div>
-                    
                         <div id="einheitssatzRow" class="flex justify-between items-center hidden">
-                            <span class="text-gray-600 dark:text-gray-400" id="einheitssatzLabel">Einheitssatz:</span>
-                            <span id="einheitssatzgebuhr" class="font-semibold">-</span>
+                            <span class="row-item text-sm" id="einheitssatzLabel">Einheitssatz</span>
+                            <span id="einheitssatzgebuhr" class="row-value text-sm">—</span>
                         </div>
-                        
-                        <div id="zwischensummeRow" class="flex justify-between items-center hidden border-t border-gray-200 dark:border-gray-700 pt-2">
-                            <span class="text-gray-600 dark:text-gray-400 font-semibold">Zwischensumme:</span>
-                            <span id="zwischensumme" class="font-semibold">-</span>
+                        <div id="zwischensummeRow" class="flex justify-between items-center hidden pt-2 border-t divider">
+                            <span class="row-item text-sm font-semibold">Zwischensumme</span>
+                            <span id="zwischensumme" class="row-value text-sm">—</span>
                         </div>
-                        
                         <div id="mwstRow" class="flex justify-between items-center">
-                            <span class="text-gray-600 dark:text-gray-400">MWST (8,1%):</span>
-                            <span id="mwst" class="font-semibold">-</span>
+                            <span class="row-item text-sm">MWST (8,1%)</span>
+                            <span id="mwst" class="row-value text-sm">—</span>
                         </div>
-                        
-                        <hr class="border-gray-200 dark:border-gray-700">
-                        
-                        <div class="flex justify-between items-center text-lg font-bold">
-                            <span>Gesamtbetrag:</span>
-                            <span id="gesamtbetrag" class="text-primary">-</span>
+
+                        <div class="flex justify-between items-center pt-3 border-t" style="border-color:rgba(202,138,4,0.3);">
+                            <span class="font-semibold" style="font-family:'Poppins',sans-serif;color:#F1F5F9;font-size:0.95rem;">Gesamtbetrag</span>
+                            <span id="gesamtbetrag" class="total-amount text-xl font-700" style="font-weight:700;">—</span>
                         </div>
                     </div>
 
-                    <div id="berechnungsdetails" class="mt-4 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg text-xs text-gray-600 dark:text-gray-400">
-                    </div>
+                    <div id="berechnungsdetails" class="mt-1 pt-3 border-t divider text-xs" style="color:#475569;"></div>
                 </div>
             </div>
 
-            <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-4">
-                <p class="text-sm text-blue-800 dark:text-blue-200">
-                    <strong>Hinweis:</strong> Diese Berechnung basiert auf der Verordnung vom 30. Juni 1992 über die Tarifansätze der Entlohnung für Rechtsanwälte und Rechtsagenten (LGBl. 1992 Nr. 69).
+        </main>
+
+        <!-- Legal notice -->
+        <footer class="w-full max-w-lg mt-5">
+            <div class="glass rounded-xl px-4 py-3 flex items-start gap-3">
+                <svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CA8A04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <p class="text-xs leading-relaxed" style="color:#64748B;">
+                    Berechnung basiert auf der <strong style="color:#94A3B8;">Verordnung vom 30. Juni 1992</strong> über die Tarifansätze der Entlohnung für Rechtsanwälte und Rechtsagenten (LGBl. 1992 Nr. 69).
                 </p>
             </div>
-        </div>
-    </div>
+        </footer>
+
+    </div><!-- end main wrapper -->
 
     <script>
-        // Dark mode detection
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
+        // Dark mode (always dark for this design)
+        document.documentElement.classList.add('dark');
 
-        // Tarif-Berechnungsfunktionen basierend auf LGBl. 1992 Nr. 69
         function calculateTarifpost1(betrag) {
             if (betrag <= 500) return 17;
             if (betrag <= 1000) return 25;
@@ -309,12 +395,10 @@
             }
             if (betrag <= 5000000) {
                 const basisGebühr = 159 + (Math.ceil((500000 - 140000) / 20000) * 17);
-                const mehrBetrag = betrag - 500000;
-                return Math.min(basisGebühr + (mehrBetrag * 0.0001), 1426);
+                return Math.min(basisGebühr + ((betrag - 500000) * 0.0001), 1426);
             }
             const basisGebühr = 159 + (Math.ceil((500000 - 140000) / 20000) * 17) + ((5000000 - 500000) * 0.0001);
-            const mehrBetrag = betrag - 5000000;
-            return Math.min(basisGebühr + (mehrBetrag * 0.00005), 1426);
+            return Math.min(basisGebühr + ((betrag - 5000000) * 0.00005), 1426);
         }
 
         function calculateTarifpost2(betrag) {
@@ -337,12 +421,10 @@
             }
             if (betrag <= 5000000) {
                 const basisGebühr = 792 + (Math.ceil((500000 - 140000) / 20000) * 80);
-                const mehrBetrag = betrag - 500000;
-                return Math.min(basisGebühr + (mehrBetrag * 0.0005), 7128);
+                return Math.min(basisGebühr + ((betrag - 500000) * 0.0005), 7128);
             }
             const basisGebühr = 792 + (Math.ceil((500000 - 140000) / 20000) * 80) + ((5000000 - 500000) * 0.0005);
-            const mehrBetrag = betrag - 5000000;
-            return Math.min(basisGebühr + (mehrBetrag * 0.00025), 7128);
+            return Math.min(basisGebühr + ((betrag - 5000000) * 0.00025), 7128);
         }
 
         function calculateTarifpost3A(betrag) {
@@ -365,12 +447,10 @@
             }
             if (betrag <= 5000000) {
                 const basisGebühr = 1584 + (Math.ceil((500000 - 140000) / 20000) * 159);
-                const mehrBetrag = betrag - 500000;
-                return Math.min(basisGebühr + (mehrBetrag * 0.001), 43200);
+                return Math.min(basisGebühr + ((betrag - 500000) * 0.001), 43200);
             }
             const basisGebühr = 1584 + (Math.ceil((500000 - 140000) / 20000) * 159) + ((5000000 - 500000) * 0.001);
-            const mehrBetrag = betrag - 5000000;
-            return Math.min(basisGebühr + (mehrBetrag * 0.0005), 43200);
+            return Math.min(basisGebühr + ((betrag - 5000000) * 0.0005), 43200);
         }
 
         function calculateTarifpost3B(betrag) {
@@ -393,12 +473,10 @@
             }
             if (betrag <= 5000000) {
                 const basisGebühr = 1980 + (Math.ceil((500000 - 140000) / 20000) * 198);
-                const mehrBetrag = betrag - 500000;
-                return Math.min(basisGebühr + (mehrBetrag * 0.00125), 54000);
+                return Math.min(basisGebühr + ((betrag - 500000) * 0.00125), 54000);
             }
             const basisGebühr = 1980 + (Math.ceil((500000 - 140000) / 20000) * 198) + ((5000000 - 500000) * 0.00125);
-            const mehrBetrag = betrag - 5000000;
-            return Math.min(basisGebühr + (mehrBetrag * 0.000625), 54000);
+            return Math.min(basisGebühr + ((betrag - 5000000) * 0.000625), 54000);
         }
 
         function calculateTarifpost3C(betrag) {
@@ -421,12 +499,10 @@
             }
             if (betrag <= 5000000) {
                 const basisGebühr = 2376 + (Math.ceil((500000 - 140000) / 20000) * 238);
-                const mehrBetrag = betrag - 500000;
-                return Math.min(basisGebühr + (mehrBetrag * 0.0015), 64800);
+                return Math.min(basisGebühr + ((betrag - 500000) * 0.0015), 64800);
             }
             const basisGebühr = 2376 + (Math.ceil((500000 - 140000) / 20000) * 238) + ((5000000 - 500000) * 0.0015);
-            const mehrBetrag = betrag - 5000000;
-            return Math.min(basisGebühr + (mehrBetrag * 0.00075), 64800);
+            return Math.min(basisGebühr + ((betrag - 5000000) * 0.00075), 64800);
         }
 
         function calculateTarifpost5(betrag) {
@@ -436,7 +512,6 @@
             if (betrag <= 10000) return 17;
             if (betrag <= 25000) return 33;
             if (betrag <= 50000) return 50;
-            
             const zusatzBetrag = betrag - 50000;
             const zusatzEinheiten = Math.ceil(zusatzBetrag / 20000);
             return Math.min(50 + (zusatzEinheiten * 17), 100);
@@ -448,7 +523,6 @@
             if (betrag <= 5000) return 53;
             if (betrag <= 10000) return 75;
             if (betrag <= 25000) return 135;
-            
             const zusatzBetrag = betrag - 25000;
             const zusatzEinheiten = Math.ceil(zusatzBetrag / 20000);
             return Math.min(135 + (zusatzEinheiten * 15), 600);
@@ -458,15 +532,16 @@
             const checkbox = document.getElementById('sonderBewertung');
             const selectContainer = document.getElementById('sonderBewertungSelect');
             const streitwertInput = document.getElementById('streitwert');
-            
             if (checkbox.checked) {
                 selectContainer.classList.remove('hidden');
                 streitwertInput.readOnly = true;
-                streitwertInput.classList.add('bg-gray-100', 'cursor-not-allowed', 'dark:bg-gray-700');
+                streitwertInput.style.opacity = '0.5';
+                streitwertInput.style.cursor = 'not-allowed';
             } else {
                 selectContainer.classList.add('hidden');
                 streitwertInput.readOnly = false;
-                streitwertInput.classList.remove('bg-gray-100', 'cursor-not-allowed', 'dark:bg-gray-700');
+                streitwertInput.style.opacity = '1';
+                streitwertInput.style.cursor = '';
             }
             updateSonderbewertung();
         }
@@ -474,11 +549,9 @@
         function updateSonderbewertung() {
             const checkbox = document.getElementById('sonderBewertung');
             const streitwertInput = document.getElementById('streitwert');
-            
             if (checkbox.checked) {
                 const bewertungsart = document.getElementById('bewertungsart').value;
-                const wert = parseInt(bewertungsart);
-                streitwertInput.value = wert;
+                streitwertInput.value = parseInt(bewertungsart);
             } else {
                 streitwertInput.value = '';
             }
@@ -488,7 +561,6 @@
         function toggleStreitgenossenSelect() {
             const checkbox = document.getElementById('streitgenossenCheckbox');
             const selectContainer = document.getElementById('streitgenossenContainer');
-            
             if (checkbox.checked) {
                 selectContainer.classList.remove('hidden');
             } else {
@@ -499,71 +571,48 @@
 
         function handleTarifpostChange() {
             const tarifpost = document.getElementById('tarifpost').value;
-            const zeitContainer = document.getElementById('zeitContainer');
-            const informationContainer = document.getElementById('informationContainer');
-            const einheitssatzContainer = document.getElementById('einheitssatzContainer');
-            
-            // Prüfen ob zeitbasiert (jetzt inklusive 'tp3a')
             const zeitbasierte = ['tp2-tag', 'tp3a', 'tp8'];
-            if (zeitbasierte.includes(tarifpost)) {
-                zeitContainer.classList.remove('hidden');
-            } else {
-                zeitContainer.classList.add('hidden');
-            }
-            
-            // Prüfen ob TP5 oder TP6 (für Informationszuschlag)
-            const informationZuschlagTarife = ['tp5', 'tp6'];
-            if (informationZuschlagTarife.includes(tarifpost)) {
-                informationContainer.classList.remove('hidden');
-            } else {
-                informationContainer.classList.add('hidden');
-                document.getElementById('informationszuschlag').checked = false;
-            }
-            
-            // Prüfen ob Einheitssatz anwendbar (jetzt inklusive 'tp3a')
+            document.getElementById('zeitContainer').classList.toggle('hidden', !zeitbasierte.includes(tarifpost));
+            const infoTarife = ['tp5', 'tp6'];
+            document.getElementById('informationContainer').classList.toggle('hidden', !infoTarife.includes(tarifpost));
+            if (!infoTarife.includes(tarifpost)) document.getElementById('informationszuschlag').checked = false;
             const einheitssatzTarife = ['tp1', 'tp2-schrift', 'tp2-tag', 'tp3a', 'tp3b', 'tp3c', 'tp4-uebertretung', 'tp4-vergehen'];
-            if (einheitssatzTarife.includes(tarifpost)) {
-                einheitssatzContainer.classList.remove('hidden');
-            } else {
-                einheitssatzContainer.classList.add('hidden');
-                document.getElementById('einheitssatz').checked = false;
-            }
-            
+            document.getElementById('einheitssatzContainer').classList.toggle('hidden', !einheitssatzTarife.includes(tarifpost));
+            if (!einheitssatzTarife.includes(tarifpost)) document.getElementById('einheitssatz').checked = false;
             calculateFees();
         }
 
         function calculateStreitgenossenzuschlag(anzahl) {
             if (anzahl <= 1) return 0;
-            if (anzahl === 2) return 0.10; // 10%
-            if (anzahl >= 10) return 0.50; // 50% max
-            return 0.10 + ((anzahl - 2) * 0.05); // 10% + 5% pro weitere Person
+            if (anzahl === 2) return 0.10;
+            if (anzahl >= 10) return 0.50;
+            return 0.10 + ((anzahl - 2) * 0.05);
+        }
+
+        function fmt(val) {
+            return 'CHF ' + val.toFixed(2);
         }
 
         function calculateFees() {
             const streitwert = parseFloat(document.getElementById('streitwert').value);
             const tarifpost = document.getElementById('tarifpost').value;
             const zeitdauer = parseFloat(document.getElementById('zeitdauer').value);
-            
             if (!streitwert || streitwert <= 0 || !tarifpost) {
                 document.getElementById('result').classList.add('hidden');
                 return;
             }
 
-            let grundgebühr = 0;
-            let zusatzgebühr = 0;
-            let tarifpostName = '';
-            let berechnungsdetails = '';
-            let zusatzgebuhrLabel = '';
+            let grundgebühr = 0, zusatzgebühr = 0, tarifpostName = '', berechnungsdetails = '', zusatzgebuhrLabel = '';
             switch(tarifpost) {
                 case 'tp1':
                     grundgebühr = calculateTarifpost1(streitwert);
-                    tarifpostName = 'Tarifpost 1 - Einfache Schriftsätze';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
+                    tarifpostName = 'Tarifpost 1 – Einfache Schriftsätze';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH');
                     break;
                 case 'tp2-schrift':
                     grundgebühr = calculateTarifpost2(streitwert);
-                    tarifpostName = 'Tarifpost 2 - Schriftsätze';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
+                    tarifpostName = 'Tarifpost 2 – Schriftsätze';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH');
                     break;
                 case 'tp2-tag':
                     grundgebühr = calculateTarifpost2(streitwert);
@@ -571,8 +620,8 @@
                         zusatzgebühr = (zeitdauer - 1) * (grundgebühr / 2);
                         zusatzgebuhrLabel = 'Zusätzliche Stunden (' + (zeitdauer - 1) + 'h à 50%)';
                     }
-                    tarifpostName = 'Tarifpost 2 - Tagsatzungen (1. Stunde + weitere)';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString() + ', Dauer: ' + zeitdauer + ' Stunde(n)';
+                    tarifpostName = 'Tarifpost 2 – Tagsatzungen';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH') + ', Dauer: ' + zeitdauer + ' Std.';
                     break;
                 case 'tp3a':
                     grundgebühr = calculateTarifpost3A(streitwert);
@@ -580,30 +629,27 @@
                         zusatzgebühr = (zeitdauer - 1) * (grundgebühr / 2);
                         zusatzgebuhrLabel = 'Zusätzliche Stunden (' + (zeitdauer - 1) + 'h à 50%)';
                     }
-                    tarifpostName = 'Tarifpost 3A - Klagen, Schriftsätze, Tagsatzungen';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
-                    if (zeitdauer > 0) {
-                        berechnungsdetails += ', Dauer: ' + zeitdauer + ' Stunde(n)';
-                    }
+                    tarifpostName = 'Tarifpost 3A – Klagen, Schriftsätze, Tagsatzungen';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH') + (zeitdauer > 0 ? ', Dauer: ' + zeitdauer + ' Std.' : '');
                     break;
                 case 'tp3b':
                     grundgebühr = calculateTarifpost3B(streitwert);
-                    tarifpostName = 'Tarifpost 3B - Berufungen, Rekurse';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
+                    tarifpostName = 'Tarifpost 3B – Berufungen, Rekurse';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH');
                     break;
                 case 'tp3c':
                     grundgebühr = calculateTarifpost3C(streitwert);
-                    tarifpostName = 'Tarifpost 3C - Revisionen';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
+                    tarifpostName = 'Tarifpost 3C – Revisionen';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH');
                     break;
                 case 'tp4-uebertretung':
                     grundgebühr = 150;
-                    tarifpostName = 'Tarifpost 4 - Privatanklage Übertretung';
+                    tarifpostName = 'Tarifpost 4 – Privatanklage Übertretung';
                     berechnungsdetails = 'Fixbetrag für Anklagen wegen Übertretungen';
                     break;
                 case 'tp4-vergehen':
                     grundgebühr = 375;
-                    tarifpostName = 'Tarifpost 4 - Privatanklage Vergehen';
+                    tarifpostName = 'Tarifpost 4 – Privatanklage Vergehen';
                     berechnungsdetails = 'Fixbetrag für Anklagen wegen Vergehen';
                     break;
                 case 'tp5':
@@ -612,11 +658,8 @@
                         zusatzgebühr = grundgebühr * 0.5;
                         zusatzgebuhrLabel = 'Informationszuschlag (+50%)';
                     }
-                    tarifpostName = 'Tarifpost 5 - Einfache Schreiben';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString();
-                    if (document.getElementById('informationszuschlag').checked) {
-                        berechnungsdetails += ' (inkl. Informationszuschlag)';
-                    }
+                    tarifpostName = 'Tarifpost 5 – Einfache Schreiben';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH');
                     break;
                 case 'tp6':
                     grundgebühr = Math.min(calculateTarifpost5(streitwert) * 2, 330);
@@ -624,98 +667,65 @@
                         zusatzgebühr = grundgebühr * 0.5;
                         zusatzgebuhrLabel = 'Informationszuschlag (+50%)';
                     }
-                    tarifpostName = 'Tarifpost 6 - Briefe anderer Art';
-                    berechnungsdetails = 'Doppelter Satz von TP5, max. CHF 330.-';
-                    if (document.getElementById('informationszuschlag').checked) {
-                        berechnungsdetails += ' (inkl. Informationszuschlag)';
-                    }
+                    tarifpostName = 'Tarifpost 6 – Briefe anderer Art';
+                    berechnungsdetails = 'Doppelter Satz von TP5, max. CHF 330.–';
                     break;
                 case 'tp8':
                     grundgebühr = calculateTarifpost8(streitwert) * zeitdauer;
-                    tarifpostName = 'Tarifpost 8 - Besprechungen (' + zeitdauer + ' Std.)';
-                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString() + ', ' + zeitdauer + ' Stunde(n) à CHF ' + calculateTarifpost8(streitwert) + '.-';
+                    tarifpostName = 'Tarifpost 8 – Besprechungen (' + zeitdauer + ' Std.)';
+                    berechnungsdetails = 'Bemessungsgrundlage: CHF ' + streitwert.toLocaleString('de-CH') + ', ' + zeitdauer + ' Std. à CHF ' + calculateTarifpost8(streitwert) + '.–';
                     break;
             }
 
-            // Streitgenossenzuschlag berechnen (Art. 15)
             let streitgenossenGebühr = 0;
             const streitgenossenCheckbox = document.getElementById('streitgenossenCheckbox').checked;
-
             if (streitgenossenCheckbox) {
-                const streitgenossenAnzahl = parseInt(document.getElementById('streitgenossen').value);
-                const streitgenossenZuschlag = calculateStreitgenossenzuschlag(streitgenossenAnzahl);
-                streitgenossenGebühr = (grundgebühr + zusatzgebühr) * streitgenossenZuschlag;
+                const anzahl = parseInt(document.getElementById('streitgenossen').value);
+                streitgenossenGebühr = (grundgebühr + zusatzgebühr) * calculateStreitgenossenzuschlag(anzahl);
             }
 
-            // Einheitssatz berechnen (Art. 23)
             let einheitssatzGebühr = 0;
-            const einheitssatzChecked = document.getElementById('einheitssatz').checked;
-            if (einheitssatzChecked) {
-                const einheitssatzProzent = streitwert <= 15000 ? 0.50 : 0.40;
-                einheitssatzGebühr = (grundgebühr + zusatzgebühr + streitgenossenGebühr) * einheitssatzProzent;
+            if (document.getElementById('einheitssatz').checked) {
+                const pct = streitwert <= 15000 ? 0.50 : 0.40;
+                einheitssatzGebühr = (grundgebühr + zusatzgebühr + streitgenossenGebühr) * pct;
             }
 
-            // Gesamtsumme berechnen
             const gesamtGrundgebühr = grundgebühr + zusatzgebühr + streitgenossenGebühr + einheitssatzGebühr;
             const mwstChecked = document.getElementById('mwstOption').checked;
             const mwst = mwstChecked ? gesamtGrundgebühr * 0.081 : 0;
             const gesamtbetrag = gesamtGrundgebühr + mwst;
 
-            // Ergebnisse anzeigen
             document.getElementById('tarifpostName').textContent = tarifpostName;
-            document.getElementById('grundgebuhr').textContent = `CHF ${grundgebühr.toFixed(2)}`;
-            
-            // MWST-Anzeige je nach Option
-            const mwstRow = document.getElementById('mwst').parentElement;
-            if (mwstChecked) {
-                document.getElementById('mwst').textContent = `CHF ${mwst.toFixed(2)}`;
-                mwstRow.style.display = 'flex';
-            } else {
-                mwstRow.style.display = 'none';
-            }
-            
-            document.getElementById('gesamtbetrag').textContent = `CHF ${gesamtbetrag.toFixed(2)}`;
-            
-            // Berechnungsdetails
+            document.getElementById('grundgebuhr').textContent = fmt(grundgebühr);
+            document.getElementById('mwst').textContent = fmt(mwst);
+            document.getElementById('mwst').parentElement.style.display = mwstChecked ? 'flex' : 'none';
+            document.getElementById('gesamtbetrag').textContent = fmt(gesamtbetrag);
             document.getElementById('berechnungsdetails').textContent = berechnungsdetails;
-            
-            // Zusatzgebühr anzeigen (nur Informationszuschlag oder Zeitzuschlag)
+
+            const showRow = (id, show) => document.getElementById(id).classList.toggle('hidden', !show);
+            showRow('zusatzgebuhrRow', zusatzgebühr > 0);
             if (zusatzgebühr > 0) {
-                document.getElementById('zusatzgebuhrRow').classList.remove('hidden');
                 document.getElementById('zusatzgebuhrLabel').textContent = zusatzgebuhrLabel;
-                document.getElementById('zusatzgebuhr').textContent = `CHF ${zusatzgebühr.toFixed(2)}`;
-            } else {
-                document.getElementById('zusatzgebuhrRow').classList.add('hidden');
+                document.getElementById('zusatzgebuhr').textContent = fmt(zusatzgebühr);
             }
 
-            // Streitgenossenzuschlag separat anzeigen
+            showRow('streitgenossenRow', streitgenossenCheckbox);
             if (streitgenossenCheckbox) {
-                document.getElementById('streitgenossenRow').classList.remove('hidden');
-                const streitgenossenAnzahl = parseInt(document.getElementById('streitgenossen').value);
-                const streitgenossenZuschlag = calculateStreitgenossenzuschlag(streitgenossenAnzahl);
-                document.getElementById('streitgenossenLabel').textContent = `Streitgenossenzuschlag (+${(streitgenossenZuschlag * 100).toFixed(0)}%):`;
-                document.getElementById('streitgenossengebuhr').textContent = `CHF ${streitgenossenGebühr.toFixed(2)}`;
-            } else {
-                document.getElementById('streitgenossenRow').classList.add('hidden');
+                const anzahl = parseInt(document.getElementById('streitgenossen').value);
+                const pct = calculateStreitgenossenzuschlag(anzahl);
+                document.getElementById('streitgenossenLabel').textContent = 'Streitgenossenzuschlag (+' + (pct * 100).toFixed(0) + '%)';
+                document.getElementById('streitgenossengebuhr').textContent = fmt(streitgenossenGebühr);
             }
 
-            // Einheitssatz separat anzeigen
+            showRow('einheitssatzRow', einheitssatzGebühr > 0);
             if (einheitssatzGebühr > 0) {
-                document.getElementById('einheitssatzRow').classList.remove('hidden');
-                const einheitssatzProzent = streitwert <= 15000 ? 50 : 40;
-                document.getElementById('einheitssatzLabel').textContent = `Einheitssatz (+${einheitssatzProzent}%):`;
-                document.getElementById('einheitssatzgebuhr').textContent = `CHF ${einheitssatzGebühr.toFixed(2)}`;
-            } else {
-                document.getElementById('einheitssatzRow').classList.add('hidden');
+                const pct = streitwert <= 15000 ? 50 : 40;
+                document.getElementById('einheitssatzLabel').textContent = 'Einheitssatz (+' + pct + '%)';
+                document.getElementById('einheitssatzgebuhr').textContent = fmt(einheitssatzGebühr);
             }
 
-            // Zwischensumme nur bei MWST anzeigen
-            if (mwstChecked) {
-                document.getElementById('zwischensummeRow').classList.remove('hidden');
-                document.getElementById('zwischensumme').textContent = `CHF ${gesamtGrundgebühr.toFixed(2)}`;
-            } else {
-                document.getElementById('zwischensummeRow').classList.add('hidden');
-            }
+            showRow('zwischensummeRow', mwstChecked);
+            if (mwstChecked) document.getElementById('zwischensumme').textContent = fmt(gesamtGrundgebühr);
 
             document.getElementById('result').classList.remove('hidden');
         }
