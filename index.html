@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulting für Personalberatungen in FL, AT &amp; CH | Tschann Consulting</title>
+  <meta name="description" content="Tschann Consulting berät Personalberatungen, Headhunter und Recruiting-Agenturen in Liechtenstein, Österreich und der Schweiz — Strategie, Prozesse, Expansion und Gründung." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.tschann-consulting.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tschann-consulting.com/" />
+  <meta property="og:title" content="Consulting für Personalberatungen | Tschann Consulting" />
+  <meta property="og:description" content="Beratung für Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum." />
+  <meta property="og:image" content="https://www.tschann-consulting.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tschann Consulting AG",
+    "url": "https://www.tschann-consulting.com",
+    "description": "Beratung für Personalberatungen, Headhunter und Recruiting-Agenturen in Liechtenstein, Österreich und der Schweiz.",
+    "telephone": "+4237971818",
+    "email": "kontakt@tschann-consulting.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Im Böschfeld 2",
+      "postalCode": "9492",
+      "addressLocality": "Eschen",
+      "addressCountry": "LI"
+    },
+    "areaServed": ["Österreich", "Liechtenstein", "Schweiz"],
+    "founder": { "@type": "Person", "name": "René Tschann" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+
+  <style>
+    /* ── HERO ── */
+    #hero {
+      padding: 13rem 5vw 8rem;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(184,146,42,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 1080px; margin: 0 auto; position: relative; }
+
+    .hero-label {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem; display: inline-flex;
+      align-items: center; gap: 0.8rem;
+    }
+    .hero-label::before {
+      content: ''; display: block; width: 20px; height: 1px; background: var(--gold);
+    }
+    .hero-inner h1 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+      line-height: 1.14; max-width: 800px; margin-bottom: 2rem;
+      color: var(--navy);
+    }
+    .hero-inner h1 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .hero-sub {
+      font-size: 1rem; line-height: 1.85; color: var(--mid);
+      max-width: 500px; margin-bottom: 3rem;
+    }
+    .hero-actions { display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; }
+
+    /* ── PILLARS ── */
+    .pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      margin-top: 5rem;
+    }
+    .pillar {
+      padding: 2.4rem 2.2rem 2.4rem 0;
+      border-right: 1px solid var(--line);
+    }
+    .pillar:nth-child(2) { padding-left: 2.2rem; }
+    .pillar:last-child { border-right: none; padding-left: 2.2rem; padding-right: 0; }
+    .pillar-accent {
+      display: block; width: 20px; height: 2px;
+      background: var(--gold); margin-bottom: 1.1rem; border-radius: 1px;
+    }
+    .pillar h3 { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 0.45rem; }
+    .pillar p { font-size: 0.82rem; line-height: 1.72; color: var(--mid); }
+
+    /* ── LEISTUNGEN OVERVIEW ── */
+    .leistungen-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .leistung-card {
+      padding: 2.8rem 3rem 2.8rem 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-decoration: none; display: block;
+      transition: background 0.25s;
+    }
+    .leistung-card:hover { background: var(--bg2); }
+    .leistung-card:hover .card-link { color: var(--navy); }
+    .leistung-card:nth-child(even) { padding-left: 3rem; padding-right: 0; border-right: none; }
+    .leistung-card:nth-child(3), .leistung-card:nth-child(4) { border-bottom: none; }
+    .card-accent {
+      display: block; width: 18px; height: 2px;
+      background: var(--gold); margin-bottom: 1.1rem; border-radius: 1px;
+    }
+    .card-title { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.55rem; }
+    .card-desc { font-size: 0.84rem; line-height: 1.75; color: var(--mid); margin-bottom: 1.2rem; }
+    .card-link { font-size: 0.76rem; color: var(--gold); transition: color 0.2s; }
+
+    /* ── STATS ── */
+    .stats-band {
+      padding: 4.5rem 5vw;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-col {
+      padding: 0 2.4rem 0 0;
+      border-right: 1px solid var(--line);
+    }
+    .stat-col:first-child { padding-left: 0; }
+    .stat-col:last-child { border-right: none; padding-right: 0; padding-left: 2.4rem; }
+    .stat-col:nth-child(2), .stat-col:nth-child(3) { padding-left: 2.4rem; }
+    .stat-num {
+      font-family: 'Lora', serif; font-size: 2.8rem; font-weight: 500;
+      color: var(--navy); display: block; line-height: 1; margin-bottom: 0.5rem;
+    }
+    .stat-label { font-size: 0.75rem; line-height: 1.55; color: var(--mid); }
+
+    /* ── QUOTE ── */
+    .quote-band {
+      padding: 6rem 5vw;
+      background: var(--navy);
+      border-bottom: 1px solid var(--line);
+      position: relative; overflow: hidden;
+    }
+    .quote-band::before {
+      content: '';
+      position: absolute; bottom: -20%; left: -5%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(184,146,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .quote-inner { max-width: 1080px; margin: 0 auto; position: relative; }
+    .quote-mark {
+      font-family: 'Lora', serif; font-size: 5rem; line-height: 0.6;
+      color: var(--gold); display: block; margin-bottom: 1.6rem; opacity: 0.45;
+    }
+    .quote-text {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: clamp(1.15rem, 2vw, 1.7rem); line-height: 1.6;
+      max-width: 660px; color: rgba(255,255,255,0.88); margin-bottom: 2.2rem;
+    }
+    .quote-attr { font-size: 0.78rem; color: rgba(255,255,255,0.38); }
+    .quote-attr strong { color: rgba(255,255,255,0.68); font-weight: 500; }
+
+    /* ── KUNDEN ── */
+    .kunden-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      margin-top: 3.5rem;
+    }
+    .kunden-item {
+      padding: 2.2rem 2rem 2.2rem 0;
+      border-right: 1px solid var(--line);
+      text-decoration: none; display: block; transition: opacity 0.2s;
+    }
+    .kunden-item:first-child { padding-left: 0; }
+    .kunden-item:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
+    .kunden-item:nth-child(2), .kunden-item:nth-child(3) { padding-left: 2rem; }
+    .kunden-item:hover { opacity: 0.55; }
+    .kunden-logo { height: 30px; width: auto; max-width: 110px; display: block; margin-bottom: 1rem; object-fit: contain; }
+    .kunden-name { font-size: 0.88rem; font-weight: 500; color: var(--navy); margin-bottom: 0.2rem; }
+    .kunden-url { font-size: 0.71rem; color: var(--muted); }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      padding: 6rem 5vw;
+      background: var(--bg2);
+    }
+    .cta-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center;
+    }
+    .cta-inner h2 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.28; color: var(--navy);
+    }
+    .cta-inner h2 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .cta-btn {
+      background: var(--navy); color: #fff; text-decoration: none;
+      padding: 0.95rem 2.4rem; font-family: 'Inter', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+      white-space: nowrap; transition: background 0.2s; display: inline-block;
+    }
+    .cta-btn:hover { background: var(--navy2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      #hero { padding: 10rem 5vw 5rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: none; border-bottom: 1px solid var(--line); padding: 1.8rem 0; }
+      .pillar:last-child { border-bottom: none; padding-left: 0; }
+      .pillar:nth-child(2) { padding-left: 0; }
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .leistung-card { padding: 2.2rem 0 !important; border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+      .leistung-card:last-child { border-bottom: none !important; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .stat-col { border-right: none; padding: 0 !important; }
+      .kunden-grid { grid-template-columns: 1fr 1fr; }
+      .kunden-item { padding: 1.6rem 0 !important; border-right: none !important; border-bottom: 1px solid var(--line); }
+      .kunden-item:nth-last-child(-n+2) { border-bottom: none; }
+      .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html" class="nav-cta">Kontakt aufnehmen →</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="kontakt.html" class="nav-cta-mob">Kontakt aufnehmen →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <span class="hero-label">Spezialisiertes Consulting · FL · AT · CH</span>
+    <h1>Consulting für Personalberatungen, Headhunter <em>und Recruiting-Agenturen.</em></h1>
+    <p class="hero-sub">Tschann Consulting ist die erste Unternehmensberatung, die sich ausschliesslich auf Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum spezialisiert hat.</p>
+    <div class="hero-actions">
+      <a href="leistungen.html" class="link-arrow link-gold">Leistungen entdecken →</a>
+      <a href="kontakt.html" class="link-arrow link-navy">Kontakt aufnehmen →</a>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-accent"></span>
+        <h3>Exklusiver Fokus</h3>
+        <p>Wir beraten ausschliesslich Personalberatungen, Headhunter und Recruiting-Agenturen — kein Branchenmix.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-accent"></span>
+        <h3>20+ Jahre Erfahrung</h3>
+        <p>Jahrzehntelange Praxiserfahrung in der Personalberatungsbranche — aus erster Hand.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-accent"></span>
+        <h3>DACH-Raum</h3>
+        <p>Verankert in Liechtenstein, tätig in Österreich, der Schweiz und dem gesamten DACH-Raum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="section">
+  <div class="inner">
+    <span class="section-label reveal">Leistungen</span>
+    <div class="leistungen-grid">
+      <a href="leistungen.html#strategie" class="leistung-card reveal reveal-delay-1">
+        <span class="card-accent"></span>
+        <div class="card-title">Strategie</div>
+        <p class="card-desc">Positionierung, Geschäftsmodell und Wachstumsstrategie für Personalberatungen und Headhunter.</p>
+        <span class="card-link">Mehr erfahren →</span>
+      </a>
+      <a href="leistungen.html#prozesse" class="leistung-card reveal reveal-delay-2">
+        <span class="card-accent"></span>
+        <div class="card-title">Prozesse</div>
+        <p class="card-desc">Optimierung von Recruiting-Prozessen, Vertriebsstrukturen und internen Abläufen.</p>
+        <span class="card-link">Mehr erfahren →</span>
+      </a>
+      <a href="leistungen.html#expansion" class="leistung-card reveal reveal-delay-3">
+        <span class="card-accent"></span>
+        <div class="card-title">Expansion</div>
+        <p class="card-desc">Wachstum im DACH-Raum: Markteintritt, Standortstrategie und operative Skalierung.</p>
+        <span class="card-link">Mehr erfahren →</span>
+      </a>
+      <a href="leistungen.html#gruendung" class="leistung-card reveal reveal-delay-4">
+        <span class="card-accent"></span>
+        <div class="card-title">Gründung</div>
+        <p class="card-desc">Aufbau einer Personalberatung oder Recruiting-Agentur — von der Idee bis zur ersten Mandatsgewinnung.</p>
+        <span class="card-link">Mehr erfahren →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band" id="stats-band">
+  <div class="inner">
+    <div class="stats-grid">
+      <div class="stat-col reveal reveal-delay-1">
+        <span class="stat-num" data-target="20" data-suffix="+">0</span>
+        <span class="stat-label">Jahre Branchenerfahrung</span>
+      </div>
+      <div class="stat-col reveal reveal-delay-2">
+        <span class="stat-num" data-target="200" data-suffix="+">0</span>
+        <span class="stat-label">Abgeschlossene Projekte</span>
+      </div>
+      <div class="stat-col reveal reveal-delay-3">
+        <span class="stat-num" data-target="100" data-suffix="+">0</span>
+        <span class="stat-label">Zufriedene Kunden im DACH-Raum</span>
+      </div>
+      <div class="stat-col reveal reveal-delay-4">
+        <span class="stat-num" data-target="100" data-suffix="+">0</span>
+        <span class="stat-label">Internationale Branchenkontakte</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Wir kennen die Herausforderungen und Chancen der Personalberatungsbranche wie kein anderer — weil wir sie selbst erlebt haben.</p>
+    <div class="quote-attr">
+      <strong>René Tschann</strong> · Geschäftsführer &amp; Gründer, Tschann Consulting AG
+    </div>
+  </div>
+</div>
+
+<!-- KUNDEN -->
+<section class="section">
+  <div class="inner">
+    <span class="section-label reveal">Kunden</span>
+    <div class="kunden-grid">
+      <a href="https://www.schwarzpersonal.com/" target="_blank" rel="noopener" class="kunden-item reveal reveal-delay-1">
+        <img class="kunden-logo" src="https://logo.clearbit.com/schwarzpersonal.com" alt="Schwarz Personal" onerror="this.style.display='none'" />
+        <div class="kunden-name">Schwarz Personal</div>
+        <div class="kunden-url">schwarzpersonal.com</div>
+      </a>
+      <a href="https://www.isnow.jobs/" target="_blank" rel="noopener" class="kunden-item reveal reveal-delay-2">
+        <img class="kunden-logo" src="https://logo.clearbit.com/isnow.jobs" alt="isnow.jobs" onerror="this.style.display='none'" />
+        <div class="kunden-name">isnow.jobs</div>
+        <div class="kunden-url">isnow.jobs</div>
+      </a>
+      <a href="https://www.steinerjobs.ch/" target="_blank" rel="noopener" class="kunden-item reveal reveal-delay-3">
+        <img class="kunden-logo" src="https://logo.clearbit.com/steinerjobs.ch" alt="Steiner Jobs" onerror="this.style.display='none'" />
+        <div class="kunden-name">Steiner Jobs</div>
+        <div class="kunden-url">steinerjobs.ch</div>
+      </a>
+      <a href="https://www.w-m.jobs/" target="_blank" rel="noopener" class="kunden-item reveal reveal-delay-4">
+        <img class="kunden-logo" src="https://logo.clearbit.com/w-m.jobs" alt="W&amp;M Jobs" onerror="this.style.display='none'" />
+        <div class="kunden-name">W&amp;M Jobs</div>
+        <div class="kunden-url">w-m.jobs</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2>Bereit, Ihre Personalberatung <em>auf das nächste Level zu bringen?</em></h2>
+    <a href="kontakt.html" class="cta-btn">Gespräch vereinbaren →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+      </div>
+      <p class="footer-tagline">Consulting für Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigation</span>
+      <div class="footer-links-list">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <span class="footer-col-title">Kontakt</span>
+      <div class="footer-links-list">
+        <a href="mailto:kontakt@tschann-consulting.com">kontakt@tschann-consulting.com</a>
+        <a href="tel:+4237971818">+423 797 18 18</a>
+        <a href="#" id="impressum-open">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Tschann Consulting Holding AG</span>
+    <span class="footer-copy">Liechtenstein · Österreich · Schweiz</span>
+  </div>
+</footer>
+
+<!-- IMPRESSUM MODAL -->
+<div id="impressum-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(15,34,64,0.78);backdrop-filter:blur(6px);overflow-y:auto;padding:2rem 5vw;">
+  <div style="max-width:620px;margin:4rem auto;background:#fff;padding:3rem;position:relative;">
+    <button id="impressum-close" style="position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--mid);" title="Schliessen">×</button>
+    <span style="font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem;">Rechtliche Angaben</span>
+    <h2 style="font-family:'Lora',serif;font-weight:500;font-size:1.7rem;color:var(--navy);margin-bottom:2rem;">Impressum</h2>
+    <p style="font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:1.6rem;">
+      Tschann Consulting Holding AG<br />
+      Im Böschfeld 2, 9492 Eschen<br />
+      Fürstentum Liechtenstein<br /><br />
+      Handelsregister-Nr.: FL-0002.721.791-1<br />
+      Geschäftsführer: René Tschann
+    </p>
+    <p style="font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:1.6rem;">
+      <a href="mailto:kontakt@tschann-consulting.com" style="color:var(--gold);text-decoration:none;">kontakt@tschann-consulting.com</a><br />
+      <a href="tel:+4237971818" style="color:var(--gold);text-decoration:none;">+423 797 18 18</a>
+    </p>
+    <p style="font-size:0.82rem;line-height:1.8;color:var(--mid);">Aufsichtsbehörde: Amt für Volkswirtschaft (AVW), Äulestrasse 70, 9490 Vaduz, Fürstentum Liechtenstein.</p>
+  </div>
+</div>
+
+<script>
+  // Nav scroll shadow
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Hamburger
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Reveal
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  // Count-up
+  function countUp(el) {
+    const target = +el.dataset.target, suffix = el.dataset.suffix || '', dur = 1500, t0 = performance.now();
+    (function step(now) {
+      const p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(e * target) + (p === 1 ? suffix : '');
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.stat-num').forEach(countUp); } });
+  }, { threshold: 0.3 }).observe(document.getElementById('stats-band'));
+
+  // Impressum
+  const modal = document.getElementById('impressum-modal');
+  document.getElementById('impressum-open').addEventListener('click', e => { e.preventDefault(); modal.style.display = 'block'; document.body.style.overflow = 'hidden'; });
+  document.getElementById('impressum-close').addEventListener('click', () => { modal.style.display = 'none'; document.body.style.overflow = ''; });
+  modal.addEventListener('click', e => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { modal.style.display = 'none'; document.body.style.overflow = ''; } });
+</script>
+
+</body>
+</html>

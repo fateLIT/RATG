@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leistungen für Personalberatungen | Tschann Consulting</title>
+  <meta name="description" content="Strategie, Prozessoptimierung, Expansion und Gründung für Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.tschann-consulting.com/leistungen" />
+  <meta property="og:title" content="Leistungen für Personalberatungen | Tschann Consulting" />
+  <meta property="og:description" content="Strategie, Prozessoptimierung, Expansion und Gründung für Personalberatungen im DACH-Raum." />
+  <meta property="og:url" content="https://www.tschann-consulting.com/leistungen" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+
+  <style>
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 11rem 5vw 5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1080px; margin: 0 auto; }
+    .page-header-label {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.8rem;
+    }
+    .page-header-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .page-header h1 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      line-height: 1.15; color: var(--navy); max-width: 680px;
+    }
+    .page-header h1 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .page-header-sub {
+      font-size: 0.95rem; line-height: 1.85; color: var(--mid);
+      max-width: 500px; margin-top: 1.6rem;
+    }
+
+    /* ── LEISTUNG DETAIL ── */
+    .leistung-section {
+      padding: 6rem 5vw;
+      border-bottom: 1px solid var(--line);
+    }
+    .leistung-section:nth-child(even) { background: var(--bg2); }
+    .leistung-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start;
+    }
+    .leistung-accent {
+      display: block; width: 26px; height: 2px;
+      background: var(--gold); margin-bottom: 1.3rem; border-radius: 1px;
+    }
+    .leistung-title {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem); line-height: 1.2;
+      color: var(--navy); margin-bottom: 0.9rem;
+    }
+    .leistung-subtitle { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+    .leistung-content p {
+      font-size: 0.91rem; line-height: 1.88; color: var(--mid); margin-bottom: 1.2rem;
+    }
+
+    /* ── LEISTUNG POINTS (fixed alignment) ── */
+    .leistung-points { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 0; }
+    .leistung-point {
+      display: flex; gap: 1rem; align-items: flex-start;
+      font-size: 0.87rem; color: var(--text); line-height: 1.55;
+      padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+    }
+    .leistung-point:last-child { border-bottom: none; }
+    .leistung-point-dash {
+      color: var(--gold); flex-shrink: 0; font-size: 0.75rem;
+      line-height: 1.55; user-select: none;
+    }
+
+    /* ── DACH ── */
+    .dach-section {
+      padding: 6rem 5vw;
+      border-bottom: 1px solid var(--line);
+      background: var(--navy);
+    }
+    .dach-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+    .dach-label {
+      font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); display: block; margin-bottom: 1.8rem;
+    }
+    .dach-title {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem); line-height: 1.2;
+      color: #fff; margin-bottom: 1.6rem;
+    }
+    .dach-text p { font-size: 0.88rem; line-height: 1.88; color: rgba(255,255,255,0.52); margin-bottom: 1rem; }
+    .dach-regions { display: flex; flex-direction: column; }
+    .dach-region {
+      padding: 1.3rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: flex-start; gap: 1.2rem;
+    }
+    .dach-region:last-child { border-bottom: none; }
+    .dach-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 0.35rem; }
+    .dach-region-name { font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.82); }
+    .dach-region-detail { font-size: 0.76rem; color: rgba(255,255,255,0.34); margin-top: 0.15rem; }
+
+    /* ── FAQ ── */
+    .faq-item { border-top: 1px solid var(--line); }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-btn {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 1.6rem 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+    }
+    .faq-q { font-size: 0.94rem; font-weight: 500; color: var(--navy); line-height: 1.4; }
+    .faq-icon { font-size: 1.1rem; color: var(--gold); flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.87rem; line-height: 1.82; color: var(--mid);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-answer { max-height: 320px; padding-bottom: 1.6rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .page-header { padding: 9rem 5vw 4rem; }
+      .leistung-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .dach-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="leistungen.html" class="active">Leistungen</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html" class="nav-cta">Kontakt aufnehmen →</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="kontakt.html" class="nav-cta-mob">Kontakt aufnehmen →</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <span class="page-header-label">Leistungen</span>
+    <h1>Beratung, die auf Personalberatungen <em>zugeschnitten ist.</em></h1>
+    <p class="page-header-sub">Vier Leistungsbereiche, die auf die spezifischen Herausforderungen von Personalberatungen, Headhuntern und Recruiting-Agenturen ausgerichtet sind.</p>
+  </div>
+</div>
+
+<!-- STRATEGIE -->
+<div class="leistung-section" id="strategie">
+  <div class="leistung-inner">
+    <div class="leistung-meta reveal">
+      <span class="leistung-accent"></span>
+      <div class="leistung-title">Strategie</div>
+      <div class="leistung-subtitle">Positionierung · Geschäftsmodell · Wachstum</div>
+    </div>
+    <div class="leistung-content reveal reveal-delay-2">
+      <p>Viele Personalberatungen stehen vor ähnlichen Fragen: Wie schärfen wir unsere Positionierung? Welches Geschäftsmodell trägt langfristig? Wie gewinnen wir mehr Mandate bei besserer Marge?</p>
+      <p>Wir entwickeln massgeschneiderte Strategien für Personalberatungen, Headhunter und Recruiting-Agenturen — auf Basis von Branchenwissen, Marktkenntnis und klarer Analyse Ihrer Ausgangslage.</p>
+      <div class="leistung-points">
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Positionierung und Differenzierung im Markt</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Geschäftsmodell und Honorarstruktur</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Zielmarkt- und Branchenfokus</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Wachstumsstrategie und Prioritätensetzung</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Marktauftritt und Aussenwahrnehmung</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROZESSE -->
+<div class="leistung-section" id="prozesse">
+  <div class="leistung-inner">
+    <div class="leistung-meta reveal">
+      <span class="leistung-accent"></span>
+      <div class="leistung-title">Prozesse</div>
+      <div class="leistung-subtitle">Effizienz · Skalierbarkeit · Profitabilität</div>
+    </div>
+    <div class="leistung-content reveal reveal-delay-2">
+      <p>Effiziente Prozesse sind das Fundament einer profitablen Personalberatung. Ob Kandidatensuche, Mandatsbearbeitung oder interne Kommunikation — wir analysieren, wo Zeit und Ressourcen verloren gehen, und optimieren gezielt.</p>
+      <p>Das Ziel: eine Organisation, die mit gleichem oder geringerem Aufwand mehr leistet und skalierbar wächst.</p>
+      <div class="leistung-points">
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Analyse und Optimierung der Recruiting-Prozesse</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Vertriebsstruktur und Mandatsgewinnung</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Kandidatenmanagement und Datenqualität</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Toolauswahl und digitale Workflows</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Teamstruktur und Aufgabenverteilung</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPANSION -->
+<div class="leistung-section" id="expansion">
+  <div class="leistung-inner">
+    <div class="leistung-meta reveal">
+      <span class="leistung-accent"></span>
+      <div class="leistung-title">Expansion</div>
+      <div class="leistung-subtitle">Neue Märkte · DACH-Raum · Skalierung</div>
+    </div>
+    <div class="leistung-content reveal reveal-delay-2">
+      <p>Wachstum will strukturiert sein. Ob neue Branchen, neue Regionen oder neue Geschäftsfelder — wir begleiten Personalberatungen und Recruiting-Agenturen dabei, ihr Unternehmen nachhaltig zu skalieren.</p>
+      <p>Durch unsere Lage in Liechtenstein und unser Netzwerk im DACH-Raum kennen wir die Besonderheiten der Märkte in Österreich, der Schweiz, im Rheintal, in der Ostschweiz und in Vorarlberg aus eigener Erfahrung.</p>
+      <div class="leistung-points">
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Markteintritt in neue Regionen oder Branchen</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Standortstrategie und Filialaufbau</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Vertriebsaufbau und Mandatsgewinnung in neuen Märkten</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Operative Skalierung und Teamaufbau</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Internationalisierung im DACH-Raum</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GRÜNDUNG -->
+<div class="leistung-section" id="gruendung">
+  <div class="leistung-inner">
+    <div class="leistung-meta reveal">
+      <span class="leistung-accent"></span>
+      <div class="leistung-title">Gründung</div>
+      <div class="leistung-subtitle">Personalberatung · Recruiting-Agentur · Headhunter</div>
+    </div>
+    <div class="leistung-content reveal reveal-delay-2">
+      <p>Der Start in die Selbstständigkeit als Personalberater oder Headhunter stellt viele vor dieselben Fragen: Wie positioniere ich mich? Welches Honorarmodell passt? Wie gewinne ich die ersten Mandate?</p>
+      <p>Wir begleiten Gründerinnen und Gründer von der ersten Idee bis zum laufenden Betrieb — mit konkreten Antworten aus der Praxis, nicht aus dem Lehrbuch.</p>
+      <div class="leistung-points">
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Positionierung und Nischenfindung</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Rechtsform, Standort und Firmierung</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Honorarmodell und Angebotsstruktur</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Erste Mandatsgewinnung und Netzwerkaufbau</span></div>
+        <div class="leistung-point"><span class="leistung-point-dash">—</span><span>Aufbau von Prozessen und Tools von Beginn an</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DACH -->
+<div class="dach-section">
+  <div class="dach-inner">
+    <div class="dach-text reveal">
+      <span class="dach-label">Tätigkeitsgebiet</span>
+      <div class="dach-title">Beratung für Personalberatungen im DACH-Raum</div>
+      <p>Die Anforderungen an Personalberatungen, Headhunter und Recruiting-Agenturen steigen. Wettbewerb, Digitalisierung und veränderter Margendruck verlangen klare Strategien und effiziente Abläufe.</p>
+      <p>Als in Liechtenstein ansässiges Unternehmen betreut Tschann Consulting Kunden in Österreich, der Schweiz und dem gesamten DACH-Raum — mit direktem Zugang zu den Märkten im Rheintal, in der Ostschweiz und in Vorarlberg.</p>
+    </div>
+    <div class="dach-regions reveal reveal-delay-2">
+      <div class="dach-region">
+        <div class="dach-dot"></div>
+        <div>
+          <div class="dach-region-name">Liechtenstein</div>
+          <div class="dach-region-detail">Vaduz, Eschen, Schaan — Firmensitz</div>
+        </div>
+      </div>
+      <div class="dach-region">
+        <div class="dach-dot"></div>
+        <div>
+          <div class="dach-region-name">Schweiz</div>
+          <div class="dach-region-detail">Ostschweiz, St. Gallen, Rheintal, Zürich</div>
+        </div>
+      </div>
+      <div class="dach-region">
+        <div class="dach-dot"></div>
+        <div>
+          <div class="dach-region-name">Österreich</div>
+          <div class="dach-region-detail">Vorarlberg, Wien, Graz und weitere Standorte</div>
+        </div>
+      </div>
+      <div class="dach-region">
+        <div class="dach-dot"></div>
+        <div>
+          <div class="dach-region-name">DACH-Raum</div>
+          <div class="dach-region-detail">Internationale Vernetzung und Marktzugang</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="inner">
+    <span class="section-label reveal">Häufige Fragen</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3.5rem;" class="reveal reveal-delay-1 faq-header-grid">
+      <h2 class="serif-heading" style="font-size:clamp(1.6rem,2.5vw,2.1rem);">Fragen zur Beratung</h2>
+      <p style="font-size:0.87rem;line-height:1.82;color:var(--mid);">Antworten auf häufige Fragen rund um Strategie, Prozesse, Expansion und Gründung von Personalberatungen.</p>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-q">Für wen ist Tschann Consulting geeignet?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer">Tschann Consulting richtet sich an Personalberatungen, Headhunter, Recruiting-Agenturen und HR-Dienstleister, die ihre Strategie, Prozesse, Vertriebsstruktur oder Marktpositionierung verbessern möchten.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-q">Unterstützt Tschann Consulting auch bei der Gründung einer Personalberatung?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer">Ja. Wir begleiten Gründerinnen und Gründer beim Aufbau einer Personalberatung, Recruiting-Agentur oder eines Headhunter-Unternehmens — von der Positionierung und Rechtsform bis zur ersten Mandatsgewinnung.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-q">In welchen Regionen ist Tschann Consulting tätig?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer">Tschann Consulting betreut Personalberatungen in Liechtenstein, Österreich und der Schweiz. Durch unsere Lage in Liechtenstein sind wir besonders gut in den Märkten im Rheintal, der Ostschweiz und Vorarlberg verankert.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-q">Welche Leistungen bietet Tschann Consulting?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer">Unsere vier Leistungsbereiche sind Strategie, Prozessoptimierung, Expansion und Gründungsberatung — jeweils massgeschneidert auf Personalberatungen, Headhunter und Recruiting-Agenturen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-q">Wie läuft eine Zusammenarbeit ab?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer">Der erste Schritt ist ein unverbindliches Erstgespräch. Darin analysieren wir gemeinsam Ihre Ausgangslage, Ziele und Herausforderungen. Darauf aufbauend entwickeln wir einen konkreten Beratungsansatz.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:6rem 5vw;background:var(--bg2);border-top:1px solid var(--line);">
+  <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;" class="cta-grid-inner">
+    <h2 class="serif-heading" style="font-size:clamp(1.5rem,2.4vw,2rem);">Bereit für das nächste Gespräch?</h2>
+    <a href="kontakt.html" style="background:var(--navy);color:#fff;text-decoration:none;padding:0.92rem 2.4rem;font-size:0.76rem;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;transition:background 0.2s;display:inline-block;">Kontakt aufnehmen →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+      </div>
+      <p class="footer-tagline">Consulting für Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigation</span>
+      <div class="footer-links-list">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <span class="footer-col-title">Kontakt</span>
+      <div class="footer-links-list">
+        <a href="mailto:kontakt@tschann-consulting.com">kontakt@tschann-consulting.com</a>
+        <a href="tel:+4237971818">+423 797 18 18</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Tschann Consulting Holding AG</span>
+    <span class="footer-copy">Liechtenstein · Österreich · Schweiz</span>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 860px) {
+    .faq-header-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+    .cta-grid-inner { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .cta-grid-inner a { text-align: center; }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { burger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

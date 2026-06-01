@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Tschann Consulting</title>
+  <meta name="description" content="Nehmen Sie Kontakt mit Tschann Consulting auf — Beratung für Personalberatungen, Headhunter und Recruiting-Agenturen in Liechtenstein, Österreich und der Schweiz." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.tschann-consulting.com/kontakt" />
+  <meta property="og:title" content="Kontakt | Tschann Consulting" />
+  <meta property="og:description" content="Unverbindliches Erstgespräch vereinbaren — Beratung für Personalberatungen im DACH-Raum." />
+  <meta property="og:url" content="https://www.tschann-consulting.com/kontakt" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+
+  <style>
+    .kontakt-section {
+      padding: 11rem 5vw 8rem;
+      min-height: calc(100vh - 220px);
+    }
+    .kontakt-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 7rem; align-items: start;
+    }
+    .kontakt-label {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.8rem;
+    }
+    .kontakt-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .kontakt-left h1 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(1.9rem, 3.4vw, 2.9rem); line-height: 1.15;
+      color: var(--navy); margin-bottom: 1.5rem;
+    }
+    .kontakt-left h1 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .kontakt-left > p {
+      font-size: 0.91rem; line-height: 1.88; color: var(--mid); margin-bottom: 2.4rem;
+    }
+    .kontakt-details { display: flex; flex-direction: column; gap: 0; }
+    .kontakt-detail-item {
+      padding: 1.2rem 0; border-top: 1px solid var(--line);
+      display: flex; flex-direction: column; gap: 0.2rem;
+    }
+    .kontakt-detail-item:last-child { border-bottom: 1px solid var(--line); }
+    .detail-label {
+      font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+    }
+    .detail-value {
+      font-size: 0.9rem; color: var(--navy); text-decoration: none; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .detail-value:hover { color: var(--gold); }
+
+    /* FORM */
+    .form-wrap { background: var(--bg2); padding: 2.8rem; }
+    .form-field { margin-bottom: 1.1rem; }
+    .form-field label {
+      display: block; font-size: 0.64rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .form-field input, .form-field textarea, .form-field select {
+      width: 100%; background: #fff;
+      border: 1px solid var(--line); border-radius: 0;
+      padding: 0.82rem 1rem; font-family: 'Inter', sans-serif;
+      font-size: 0.87rem; color: var(--text); outline: none;
+      transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+    }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: var(--muted); }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+      border-color: var(--navy);
+    }
+    .form-field textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      background: var(--navy); border: none; color: #fff;
+      padding: 0.95rem 2.4rem; font-family: 'Inter', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; margin-top: 0.6rem; transition: background 0.2s; width: 100%;
+    }
+    .form-submit:hover { background: var(--navy2); }
+    .form-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.65; }
+
+    @media (max-width: 860px) {
+      .kontakt-section { padding: 9rem 5vw 5rem; }
+      .kontakt-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+      .form-wrap { padding: 2rem; margin: 0 -0px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="kontakt.html" class="nav-cta active">Kontakt aufnehmen →</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="leistungen.html">Leistungen</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="kontakt.html" class="nav-cta-mob">Kontakt aufnehmen →</a>
+</div>
+
+<section class="kontakt-section">
+  <div class="kontakt-inner">
+
+    <!-- LEFT -->
+    <div class="reveal">
+      <span class="kontakt-label">Kontakt</span>
+      <h1>Gemeinsam Ihre Personalberatung <em>stärken.</em></h1>
+      <p>Nehmen Sie Kontakt auf — für ein unverbindliches Erstgespräch, eine konkrete Anfrage oder einfach eine erste Einschätzung Ihrer Situation.</p>
+
+      <div class="kontakt-details">
+        <div class="kontakt-detail-item">
+          <span class="detail-label">E-Mail</span>
+          <a href="mailto:kontakt@tschann-consulting.com" class="detail-value">kontakt@tschann-consulting.com</a>
+        </div>
+        <div class="kontakt-detail-item">
+          <span class="detail-label">Telefon</span>
+          <a href="tel:+4237971818" class="detail-value">+423 797 18 18</a>
+        </div>
+        <div class="kontakt-detail-item">
+          <span class="detail-label">Adresse</span>
+          <span class="detail-value" style="cursor:default;font-weight:400;">Im Böschfeld 2, 9492 Eschen<br>Fürstentum Liechtenstein</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="reveal reveal-delay-2">
+      <div class="form-wrap">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="vorname">Vorname</label>
+            <input id="vorname" type="text" placeholder="Vorname" autocomplete="given-name" />
+          </div>
+          <div class="form-field">
+            <label for="nachname">Nachname</label>
+            <input id="nachname" type="text" placeholder="Nachname" autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">E-Mail</label>
+          <input id="email" type="email" placeholder="ihre@email.com" autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label for="unternehmen">Unternehmen</label>
+          <input id="unternehmen" type="text" placeholder="Name Ihrer Personalberatung / Ihres Unternehmens" autocomplete="organization" />
+        </div>
+        <div class="form-field">
+          <label for="anliegen">Anliegen</label>
+          <select id="anliegen">
+            <option value="" disabled selected>Bitte wählen</option>
+            <option>Strategische Beratung</option>
+            <option>Prozessoptimierung</option>
+            <option>Expansion</option>
+            <option>Gründung einer Personalberatung</option>
+            <option>Allgemeine Anfrage</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" placeholder="Beschreiben Sie kurz Ihre Situation oder Ihr Anliegen."></textarea>
+        </div>
+        <button class="form-submit">Anfrage senden →</button>
+        <p class="form-note">Wir melden uns in der Regel innerhalb von einem Werktag bei Ihnen.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="https://static.wixstatic.com/media/64f3cd_b1a36a77d0824938bd914c391418f5f2~mv2.png/v1/fill/w_115,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo%20kleiner_edited.png" alt="Tschann Consulting" />
+      </div>
+      <p class="footer-tagline">Consulting für Personalberatungen, Headhunter und Recruiting-Agenturen im DACH-Raum.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigation</span>
+      <div class="footer-links-list">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <span class="footer-col-title">Rechtliches</span>
+      <div class="footer-links-list">
+        <a href="#" id="impressum-open">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Tschann Consulting Holding AG</span>
+    <span class="footer-copy">Liechtenstein · Österreich · Schweiz</span>
+  </div>
+</footer>
+
+<!-- IMPRESSUM MODAL -->
+<div id="impressum-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(15,34,64,0.78);backdrop-filter:blur(6px);overflow-y:auto;padding:2rem 5vw;">
+  <div style="max-width:620px;margin:4rem auto;background:#fff;padding:3rem;position:relative;">
+    <button id="impressum-close" style="position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--mid);" title="Schliessen">×</button>
+    <span style="font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem;">Rechtliche Angaben</span>
+    <h2 style="font-family:'Lora',serif;font-weight:500;font-size:1.7rem;color:var(--navy);margin-bottom:2rem;">Impressum</h2>
+    <p style="font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:1.6rem;">
+      Tschann Consulting Holding AG<br />
+      Im Böschfeld 2, 9492 Eschen<br />
+      Fürstentum Liechtenstein<br /><br />
+      Handelsregister-Nr.: FL-0002.721.791-1<br />
+      Geschäftsführer: René Tschann
+    </p>
+    <p style="font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:1.6rem;">
+      <a href="mailto:kontakt@tschann-consulting.com" style="color:var(--gold);text-decoration:none;">kontakt@tschann-consulting.com</a><br />
+      <a href="tel:+4237971818" style="color:var(--gold);text-decoration:none;">+423 797 18 18</a>
+    </p>
+    <p style="font-size:0.82rem;line-height:1.8;color:var(--mid);">Aufsichtsbehörde: Amt für Volkswirtschaft (AVW), Äulestrasse 70, 9490 Vaduz, Fürstentum Liechtenstein.</p>
+  </div>
+</div>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { burger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  const modal = document.getElementById('impressum-modal');
+  document.getElementById('impressum-open').addEventListener('click', e => { e.preventDefault(); modal.style.display = 'block'; document.body.style.overflow = 'hidden'; });
+  document.getElementById('impressum-close').addEventListener('click', () => { modal.style.display = 'none'; document.body.style.overflow = ''; });
+  modal.addEventListener('click', e => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { modal.style.display = 'none'; document.body.style.overflow = ''; } });
+</script>
+
+</body>
+</html>
