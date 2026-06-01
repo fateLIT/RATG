@@ -19,11 +19,10 @@
   <style>
     .kontakt-section {
       padding: 11rem 5vw 8rem;
-      min-height: calc(100vh - 220px);
     }
     .kontakt-inner {
       max-width: 1080px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.15fr; gap: 7rem; align-items: start;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start;
     }
     .kontakt-label {
       font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -37,57 +36,99 @@
     }
     .kontakt-left h1 em { font-style: italic; font-weight: 400; color: var(--mid); }
     .kontakt-left > p {
-      font-size: 0.91rem; line-height: 1.88; color: var(--mid); margin-bottom: 2.4rem;
+      font-size: 0.93rem; line-height: 1.88; color: var(--mid); margin-bottom: 3rem;
+      max-width: 420px;
     }
     .kontakt-details { display: flex; flex-direction: column; gap: 0; }
     .kontakt-detail-item {
-      padding: 1.2rem 0; border-top: 1px solid var(--line);
-      display: flex; flex-direction: column; gap: 0.2rem;
+      padding: 1.4rem 0; border-top: 1px solid var(--line);
+      display: flex; flex-direction: column; gap: 0.3rem;
     }
     .kontakt-detail-item:last-child { border-bottom: 1px solid var(--line); }
     .detail-label {
       font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
     }
     .detail-value {
-      font-size: 0.9rem; color: var(--navy); text-decoration: none; font-weight: 500;
+      font-size: 0.93rem; color: var(--navy); text-decoration: none; font-weight: 500;
       transition: color 0.2s;
     }
     .detail-value:hover { color: var(--gold); }
 
-    /* FORM */
-    .form-wrap { background: var(--bg2); padding: 2.8rem; }
-    .form-field { margin-bottom: 1.1rem; }
-    .form-field label {
-      display: block; font-size: 0.64rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem;
+    /* ── RIGHT: direct contact card ── */
+    .contact-card {
+      background: var(--bg2); padding: 3rem;
     }
-    .form-field input, .form-field textarea, .form-field select {
-      width: 100%; background: #fff;
-      border: 1px solid var(--line); border-radius: 0;
-      padding: 0.82rem 1rem; font-family: 'Inter', sans-serif;
-      font-size: 0.87rem; color: var(--text); outline: none;
-      transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+    .contact-card-label {
+      font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); display: block; margin-bottom: 1.6rem;
     }
-    .form-field input::placeholder, .form-field textarea::placeholder { color: var(--muted); }
-    .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-      border-color: var(--navy);
+    .contact-card h2 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 1.25;
+      color: var(--navy); margin-bottom: 1.2rem;
     }
-    .form-field textarea { resize: vertical; min-height: 110px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-submit {
-      background: var(--navy); border: none; color: #fff;
-      padding: 0.95rem 2.4rem; font-family: 'Inter', sans-serif;
+    .contact-card h2 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .contact-card p {
+      font-size: 0.88rem; line-height: 1.82; color: var(--mid); margin-bottom: 2.4rem;
+    }
+    .contact-card-action {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .contact-email-btn {
+      background: var(--navy); color: #fff; text-decoration: none;
+      padding: 1rem 2rem; font-family: 'Inter', sans-serif;
       font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
-      cursor: pointer; margin-top: 0.6rem; transition: background 0.2s; width: 100%;
+      text-align: center; transition: background 0.2s; display: block;
     }
-    .form-submit:hover { background: var(--navy2); }
-    .form-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.65; }
+    .contact-email-btn:hover { background: var(--navy2); }
+    .contact-phone-link {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      font-size: 0.88rem; color: var(--mid); text-decoration: none;
+      padding: 0.8rem; border: 1px solid var(--line);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-phone-link:hover { border-color: var(--navy); color: var(--navy); }
+    .contact-note {
+      font-size: 0.72rem; color: var(--muted); text-align: center;
+      margin-top: 0.4rem; line-height: 1.65;
+    }
+
+    /* ── PAGE LINKS ── */
+    .page-links-section {
+      padding: 5rem 5vw;
+      background: var(--bg2);
+      border-top: 1px solid var(--line);
+    }
+    .page-links-inner {
+      max-width: 1080px; margin: 0 auto;
+    }
+    .page-links-label {
+      font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); display: block; margin-bottom: 2.5rem;
+    }
+    .page-links-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    }
+    .page-link-item {
+      padding: 2rem 2rem 2rem 0;
+      border-right: 1px solid var(--line);
+      text-decoration: none; display: block;
+      transition: background 0.2s;
+    }
+    .page-link-item:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
+    .page-link-item:nth-child(2) { padding-left: 2rem; }
+    .page-link-item:hover { opacity: 0.7; }
+    .page-link-accent { display: block; width: 16px; height: 1.5px; background: var(--gold); margin-bottom: 0.9rem; border-radius: 1px; }
+    .page-link-title { font-size: 0.94rem; font-weight: 500; color: var(--navy); margin-bottom: 0.35rem; }
+    .page-link-desc { font-size: 0.78rem; color: var(--mid); line-height: 1.6; }
 
     @media (max-width: 860px) {
       .kontakt-section { padding: 9rem 5vw 5rem; }
       .kontakt-inner { grid-template-columns: 1fr; gap: 3.5rem; }
-      .form-wrap { padding: 2rem; margin: 0 -0px; }
-      .form-row { grid-template-columns: 1fr; }
+      .contact-card { padding: 2rem; }
+      .page-links-grid { grid-template-columns: 1fr; }
+      .page-link-item { border-right: none; border-bottom: 1px solid var(--line); padding: 1.6rem 0 !important; }
+      .page-link-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -110,6 +151,7 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Startseite</a>
   <a href="leistungen.html">Leistungen</a>
   <a href="ueber-uns.html">Über uns</a>
   <a href="kontakt.html" class="nav-cta-mob">Kontakt aufnehmen →</a>
@@ -118,7 +160,7 @@
 <section class="kontakt-section">
   <div class="kontakt-inner">
 
-    <!-- LEFT -->
+    <!-- LEFT: info -->
     <div class="reveal">
       <span class="kontakt-label">Kontakt</span>
       <h1>Gemeinsam Ihre Personalberatung <em>stärken.</em></h1>
@@ -137,52 +179,56 @@
           <span class="detail-label">Adresse</span>
           <span class="detail-value" style="cursor:default;font-weight:400;">Im Böschfeld 2, 9492 Eschen<br>Fürstentum Liechtenstein</span>
         </div>
+        <div class="kontakt-detail-item">
+          <span class="detail-label">Reaktionszeit</span>
+          <span class="detail-value" style="cursor:default;font-weight:400;color:var(--mid);">In der Regel innerhalb eines Werktages</span>
+        </div>
       </div>
     </div>
 
-    <!-- FORM -->
+    <!-- RIGHT: contact card -->
     <div class="reveal reveal-delay-2">
-      <div class="form-wrap">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="vorname">Vorname</label>
-            <input id="vorname" type="text" placeholder="Vorname" autocomplete="given-name" />
-          </div>
-          <div class="form-field">
-            <label for="nachname">Nachname</label>
-            <input id="nachname" type="text" placeholder="Nachname" autocomplete="family-name" />
-          </div>
+      <div class="contact-card">
+        <span class="contact-card-label">Direkter Kontakt</span>
+        <h2>Schreiben Sie uns — <em>wir antworten schnell.</em></h2>
+        <p>Schildern Sie uns Ihre Situation kurz per E-Mail oder rufen Sie direkt an. Kein Formular, keine Umwege — nur ein direktes Gespräch.</p>
+        <div class="contact-card-action">
+          <a href="mailto:kontakt@tschann-consulting.com" class="contact-email-btn">E-Mail schreiben →</a>
+          <a href="tel:+4237971818" class="contact-phone-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
+            +423 797 18 18
+          </a>
         </div>
-        <div class="form-field">
-          <label for="email">E-Mail</label>
-          <input id="email" type="email" placeholder="ihre@email.com" autocomplete="email" />
-        </div>
-        <div class="form-field">
-          <label for="unternehmen">Unternehmen</label>
-          <input id="unternehmen" type="text" placeholder="Name Ihrer Personalberatung / Ihres Unternehmens" autocomplete="organization" />
-        </div>
-        <div class="form-field">
-          <label for="anliegen">Anliegen</label>
-          <select id="anliegen">
-            <option value="" disabled selected>Bitte wählen</option>
-            <option>Strategische Beratung</option>
-            <option>Prozessoptimierung</option>
-            <option>Expansion</option>
-            <option>Gründung einer Personalberatung</option>
-            <option>Allgemeine Anfrage</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label for="nachricht">Nachricht</label>
-          <textarea id="nachricht" placeholder="Beschreiben Sie kurz Ihre Situation oder Ihr Anliegen."></textarea>
-        </div>
-        <button class="form-submit">Anfrage senden →</button>
-        <p class="form-note">Wir melden uns in der Regel innerhalb von einem Werktag bei Ihnen.</p>
+        <p class="contact-note">Antwort in der Regel innerhalb eines Werktages.</p>
       </div>
     </div>
 
   </div>
 </section>
+
+<!-- PAGE LINKS -->
+<div class="page-links-section">
+  <div class="page-links-inner">
+    <span class="page-links-label">Mehr entdecken</span>
+    <div class="page-links-grid">
+      <a href="index.html" class="page-link-item reveal reveal-delay-1">
+        <span class="page-link-accent"></span>
+        <div class="page-link-title">Startseite</div>
+        <div class="page-link-desc">Überblick über Tschann Consulting und unseren Fokus im DACH-Raum.</div>
+      </a>
+      <a href="leistungen.html" class="page-link-item reveal reveal-delay-2">
+        <span class="page-link-accent"></span>
+        <div class="page-link-title">Leistungen</div>
+        <div class="page-link-desc">Strategie, Prozesse, Expansion und Gründung für Personalberatungen.</div>
+      </a>
+      <a href="ueber-uns.html" class="page-link-item reveal reveal-delay-3">
+        <span class="page-link-accent"></span>
+        <div class="page-link-title">Über uns</div>
+        <div class="page-link-desc">René Tschann — 20+ Jahre Praxiserfahrung in der Personalberatungsbranche.</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -196,6 +242,7 @@
     <div>
       <span class="footer-col-title">Navigation</span>
       <div class="footer-links-list">
+        <a href="index.html">Startseite</a>
         <a href="leistungen.html">Leistungen</a>
         <a href="ueber-uns.html">Über uns</a>
         <a href="kontakt.html">Kontakt</a>

@@ -152,6 +152,7 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Startseite</a>
   <a href="leistungen.html">Leistungen</a>
   <a href="ueber-uns.html">Über uns</a>
   <a href="kontakt.html" class="nav-cta-mob">Kontakt aufnehmen →</a>
@@ -337,6 +338,38 @@
   </div>
 </div>
 
+<!-- PAGE LINKS -->
+<div style="padding:5rem 5vw;background:var(--bg);border-top:1px solid var(--line);">
+  <div class="inner">
+    <span class="section-label">Mehr entdecken</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;" class="page-links-grid-ls">
+      <a href="index.html" style="padding:2rem 2rem 2rem 0;border-right:1px solid var(--line);text-decoration:none;display:block;transition:opacity 0.2s;" class="pl-item reveal reveal-delay-1">
+        <span style="display:block;width:16px;height:1.5px;background:var(--gold);margin-bottom:0.9rem;border-radius:1px;"></span>
+        <div style="font-size:0.94rem;font-weight:500;color:var(--navy);margin-bottom:0.35rem;">Startseite</div>
+        <div style="font-size:0.78rem;color:var(--mid);line-height:1.6;">Überblick und Einstieg — was Tschann Consulting auszeichnet.</div>
+      </a>
+      <a href="ueber-uns.html" style="padding:2rem;border-right:1px solid var(--line);text-decoration:none;display:block;transition:opacity 0.2s;" class="pl-item reveal reveal-delay-2">
+        <span style="display:block;width:16px;height:1.5px;background:var(--gold);margin-bottom:0.9rem;border-radius:1px;"></span>
+        <div style="font-size:0.94rem;font-weight:500;color:var(--navy);margin-bottom:0.35rem;">Über uns</div>
+        <div style="font-size:0.78rem;color:var(--mid);line-height:1.6;">René Tschann und 20+ Jahre Praxiserfahrung in der Branche.</div>
+      </a>
+      <a href="kontakt.html" style="padding:2rem 0 2rem 2rem;text-decoration:none;display:block;transition:opacity 0.2s;" class="pl-item reveal reveal-delay-3">
+        <span style="display:block;width:16px;height:1.5px;background:var(--gold);margin-bottom:0.9rem;border-radius:1px;"></span>
+        <div style="font-size:0.94rem;font-weight:500;color:var(--navy);margin-bottom:0.35rem;">Kontakt</div>
+        <div style="font-size:0.78rem;color:var(--mid);line-height:1.6;">Unverbindliches Erstgespräch vereinbaren.</div>
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+  .pl-item:hover { opacity: 0.6; }
+  @media (max-width: 860px) {
+    .page-links-grid-ls { grid-template-columns: 1fr !important; }
+    .page-links-grid-ls .pl-item { padding: 1.6rem 0 !important; border-right: none !important; border-bottom: 1px solid var(--line); }
+    .page-links-grid-ls .pl-item:last-child { border-bottom: none; }
+  }
+</style>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -349,6 +382,7 @@
     <div>
       <span class="footer-col-title">Navigation</span>
       <div class="footer-links-list">
+        <a href="index.html">Startseite</a>
         <a href="leistungen.html">Leistungen</a>
         <a href="ueber-uns.html">Über uns</a>
         <a href="kontakt.html">Kontakt</a>
